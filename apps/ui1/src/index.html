@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>UI1</title>
+</head>
+<body>
+	<app></app>
+	<script src="lib/system.src.js"></script>
+	<script src="config.js"></script>
+	<script>
+		System.import('lib/angular2-polyfills').then(function () {
+			System.import('lib/es6-shim').then(function () {
+				System.import('app/main');
+			});
+		}).catch(console.error.bind(console));
+	</script>
+</body>
+</html>
