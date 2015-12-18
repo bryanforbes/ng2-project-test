@@ -5,6 +5,7 @@ var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 var path = require('path');
 var del = require('del');
+var webserver = require('gulp-webserver');
 
 gulp.task('build.ts', function () {
 	var tsProject = tsc.createProject('src/tsconfig.json', {
@@ -64,4 +65,13 @@ gulp.task('default', function () {
 				gulp.start('build', done);
 			});
 		})));
+
+	gulp.src('dist')
+		.pipe(webserver({
+			host: '0.0.0.0',
+			port: 8080,
+			fallback: 'index.html',
+			livereload: true,
+			directoryListing: false
+		}));
 });
