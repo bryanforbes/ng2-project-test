@@ -31,9 +31,7 @@ var PATH = {
 		ts: 'src/app/**/*.ts'
 	},
 	serve: {
-		host: '0.0.0.0',
-		port: 8088,
-		index: 'index.html'
+		port: 8081
 	}
 };
 

@@ -10,12 +10,23 @@ var baseOptions = {
 	modules: {
 		typescript: 'typescript',
 		del: 'del',
-		path: 'path',
-		debug: 'gulp-debug'
+		path: 'path'
+	}
+};
+
+var basePATH = {
+	serve: {
+		host: '0.0.0.0',
+		port: 8080,
+		index: 'index.html',
+		livereload: {
+			enable: true
+		}
 	}
 };
 
 module.exports = function (PATH, options) {
+	PATH = PATH || {};
 	options = options || {};
 
 	options = _.defaultsDeep(options, baseOptions);
@@ -34,6 +45,8 @@ module.exports = function (PATH, options) {
 			});
 		})(name);
 	}
+
+	PATH = _.defaultsDeep(PATH, basePATH);
 
 	di(gulp, options)
 		.provide({ PATH: PATH })

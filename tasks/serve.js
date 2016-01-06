@@ -26,7 +26,7 @@ module.exports = function (gulp, PATH, watch, batch, path, del, webserver) {
 				host: PATH.serve.host,
 				port: PATH.serve.port,
 				fallback: PATH.serve.index,
-				livereload: true,
+				livereload: PATH.serve.livereload,
 				directoryListing: false
 			}));
 	});
