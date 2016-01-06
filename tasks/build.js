@@ -1,4 +1,4 @@
-module.exports = function (gulp, PATH, tsc, typescript, sourcemaps, runSequence) {
+module.exports = function (gulp, PATH, tsc, typescript, sourcemaps) {
 	gulp.task('build.ts', function () {
 		var tsProject = tsc.createProject(PATH.src.tsconfig, {
 			typescript: typescript
@@ -10,7 +10,7 @@ module.exports = function (gulp, PATH, tsc, typescript, sourcemaps, runSequence)
 
 		return result.js
 					 .pipe(sourcemaps.write())
-					 .pipe(gulp.dest(PATH.dest.dev.all));
+					 .pipe(gulp.dest(PATH.dest.dev.ts));
 	});
 
 	gulp.task('build.assets', function () {

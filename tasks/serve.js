@@ -1,5 +1,4 @@
-module.exports = function (gulp, PATH, watch, batch, del, webserver) {
-	var path = require('path');
+module.exports = function (gulp, PATH, watch, batch, path, del, webserver) {
 	gulp.task('serve', function () {
 		gulp.src(PATH.src.all)
 			.pipe(watch(PATH.src.all, batch(function (events, done) {
@@ -24,9 +23,9 @@ module.exports = function (gulp, PATH, watch, batch, del, webserver) {
 
 		gulp.src(PATH.dest.dev.all)
 			.pipe(webserver({
-				host: PATH.dest.dev.host,
-				port: PATH.dest.dev.port,
-				fallback: PATH.dest.dev.index,
+				host: PATH.serve.host,
+				port: PATH.serve.port,
+				fallback: PATH.serve.index,
 				livereload: true,
 				directoryListing: false
 			}));

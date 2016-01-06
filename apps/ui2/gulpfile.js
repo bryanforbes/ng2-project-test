@@ -5,10 +5,8 @@ var PATH = {
 	dest: {
 		dev: {
 			all: 'dist',
-			host: '0.0.0.0',
-			port: 8080,
-			index: 'index.html',
-			libs: 'dist/lib'
+			libs: 'dist/lib',
+			ts: 'dist/app'
 		}
 	},
 	src: {
@@ -31,6 +29,11 @@ var PATH = {
 		root: 'src',
 		tsconfig: 'src/tsconfig.json',
 		ts: 'src/app/**/*.ts'
+	},
+	serve: {
+		host: '0.0.0.0',
+		port: 8088,
+		index: 'index.html'
 	}
 };
 
